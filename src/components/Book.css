@@ -1,16 +1,21 @@
 .Book {
-    width: 400px;
+    width: 40%;
     height: auto;
     margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.title, .authors {
+p, .important {
     font-family: CenturyGothic,AppleGothic,sans-serif;
+    font-size: large; 
+}
+.important {
     font-weight: bold;
-    
 }
 
-.authors > li {
+.important > li {
     font-weight: normal;
     list-style-type: none;
     margin-top: 5px;
@@ -22,6 +27,15 @@
 }
 
 .highlight:hover {
-    /* text-shadow: 2px 2px; */
     box-shadow: 2px 2px black;
+}
+.ratings {
+    margin-left: 35%;
+}
+
+.info { 
+    display: flex;
+}
+.left-section, .right-section {
+    margin-left: 10px;
 }

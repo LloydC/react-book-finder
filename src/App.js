@@ -6,7 +6,7 @@ import Book from './components/Book'
 export default class App extends React.Component {
     constructor(props){
       super(props);
-      this.state = {title: '', bookList: []};
+      this.state = {title: '', bookList: [], notFound: false};
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
     }  
@@ -17,12 +17,19 @@ export default class App extends React.Component {
       e.preventDefault();
       axios.get(`https://www.googleapis.com/books/v1/volumes?q=${this.state.title}`)
       .then(result =>{
-        this.setState({title: '', bookList: result.data.items})
+        if(result !== 'undefined'){
+          this.setState({title: '', bookList: result.data.items})
+        }
+        else{
+          this.setState({title:'', notFound: true})
+        }
+      //  result.data.items ? this.setState({title: '', bookList: result.data.items}) :
+      //  this.setState({title:'', notFound: true})
       })
       .catch(err => console.error(err))
     }
     render(){
-      let {title, bookList} = this.state;
+      let {title, bookList, notFound} = this.state;
 
       return (
         <div className="App">
@@ -38,7 +45,7 @@ export default class App extends React.Component {
               <button className="myButton" type="submit">Search</button>
             </form>
           </header>   
-
+        {notFound ? <p>No book was found matching the search term</p> : ''}
           <div className='Books'>
             {bookList.length > 1 ? 
             bookList.map(book => <Book book={book.volumeInfo} key={book.id}/> ) : 

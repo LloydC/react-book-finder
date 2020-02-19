@@ -6,19 +6,29 @@ export default function Book(props){
     console.log(props.book)
     return (
         <div className="Book">
-            <h2 className="title">
+            <h2 className="important">
                 <span role="img" aria-label="books">&#128215;</span>{title} <span role="img" aria-label="books">&#128215;</span>
             </h2>
             <a href={infoLink} target="_new">
-                <img src={imageLinks ? imageLinks.smallThumbnail : ''} alt='book_preview' className="highlight"/>
+               {imageLinks ? <img src={imageLinks.smallThumbnail ? imageLinks.smallThumbnail : imageLinks.thumbnail} alt='book_preview' className="highlight"/> : ''} 
             </a>
+            {/* {description ? <span>{description}</span>: ''} */}
+            {averageRating ? <img className="ratings" src={"ratings/" + averageRating + "_star.png"} alt="rating" width="40%" height="10%"/> : <p>No ratings available</p>}
+            <div className="info">
+               {authors ? <div className="left-section">
+                            <ul className="important">
+                                Written by 
+                                { authors.length > 1 ? 
+                                authors.map((author, i) => i === authors.length - 1 ? <li key={author}>{author}</li> :
+                                <li key={author}>{author}, </li>) : <li> {authors[0]}</li>
+                                }
+                            </ul>
+                        </div> : ''} 
+                <div className="right-section">
+                    <p><span className="important">Released in</span> {publishedDate} </p>
+                    {publisher ? <p><span className="important">Published by </span>{publisher}</p>: ''}
+                </div>
+            </div>
             
-            {/* <div className="description">{description}</div> */}
-            <ul className="authors">Authors: { authors.length > 1 ? 
-            authors.map(author => <li key={author}>{author}</li>) : 
-            <li> {authors[0]}</li>}
-            </ul> 
-            <p>Ratings: {averageRating ? averageRating : 'No ratings available'}</p>
-            <p>Published by {publisher} in {publishedDate}</p>
         </div>);
 }
