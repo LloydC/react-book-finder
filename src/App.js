@@ -36,7 +36,7 @@ export default class App extends React.Component {
     
             <form onSubmit={this.handleSubmit}>
               <input type="text" 
-              placeholder="Enter book title here ..." 
+              placeholder="Enter a book title here ..." 
               value={title}
               onChange={this.handleChange}
               />
