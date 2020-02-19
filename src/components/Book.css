@@ -1,0 +1,27 @@
+.Book {
+    width: 400px;
+    height: auto;
+    margin-left: 5px;
+}
+
+.title, .authors {
+    font-family: CenturyGothic,AppleGothic,sans-serif;
+    font-weight: bold;
+    
+}
+
+.authors > li {
+    font-weight: normal;
+    list-style-type: none;
+    margin-top: 5px;
+}
+
+.description {
+    font-family: "Book Antiqua";
+    font-size: smaller;
+}
+
+.highlight:hover {
+    /* text-shadow: 2px 2px; */
+    box-shadow: 2px 2px black;
+}
