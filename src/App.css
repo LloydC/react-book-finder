@@ -34,9 +34,10 @@ input {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  /* 
-  align-items: center;
-  font-size: calc(10px + 2vmin); */
+}
+
+.App-footer {
+ 
 }
 
 .myButton {
@@ -50,7 +51,6 @@ input {
 	font-family:Courier New;
 	font-size:15px;
 	font-weight:bold;
-  /* padding:21px 50px; */
   margin-left: 5px;
   margin-bottom: 8px;
 	text-decoration:none;

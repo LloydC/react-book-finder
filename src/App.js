@@ -48,7 +48,10 @@ export default class App extends React.Component {
             {bookList.length > 1 ? 
             bookList.map(book => <Book book={book.volumeInfo} key={book.id}/> ) : 
             <p> This page will update as soon as you begin your search for a good read <span role="img" aria-label="books">&#128215;</span></p>}
-          </div>     
+          </div> 
+          <footer className='App-footer'>
+              Made with <span role="img" aria-label="love">&#129505;</span>   by King Code
+          </footer>    
         </div>
       );
     }
