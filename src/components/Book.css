@@ -7,14 +7,17 @@
     flex-direction: column;
 }
 
-p, .important {
+.Collapsible, p, .important {
     font-family: CenturyGothic,AppleGothic,sans-serif;
     font-size: large; 
 }
+.Collapsible:hover{
+    font-weight: bolder;
+}
+
 .important {
     font-weight: bold;
 }
-
 .important > li {
     font-weight: normal;
     list-style-type: none;

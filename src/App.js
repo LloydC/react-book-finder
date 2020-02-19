@@ -23,8 +23,6 @@ export default class App extends React.Component {
         else{
           this.setState({title:'', notFound: true})
         }
-      //  result.data.items ? this.setState({title: '', bookList: result.data.items}) :
-      //  this.setState({title:'', notFound: true})
       })
       .catch(err => console.error(err))
     }
