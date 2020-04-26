@@ -4,7 +4,7 @@ import './Book.css'
 
 export default function Book(props){
     const {title, description, authors, imageLinks, publisher, publishedDate, averageRating, infoLink} = props.book;
-    console.log(props.book)
+
     return (
         <div className="Book">
             <h2 className="important">
