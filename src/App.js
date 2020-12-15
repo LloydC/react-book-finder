@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import './App.css';
-import Book from './components/Book'
+import Book from './components/Book/Book'
 
 export default function App() {
     const [title, setTitle] = useState('')
@@ -46,10 +46,14 @@ export default function App() {
           <div className='Books'>
             {booklist.length > 1 ? 
             booklist.map(book => <Book book={book.volumeInfo} key={book.id}/> ) : 
-            <p> This page will update as soon as you begin your search for a good read <span role="img" aria-label="books">&#128215;</span></p>}
+            <div>
+              <p>This application uses Google API to find books whose title match what you've entered in the search bar, you can click on any book that you wish to purchase :)</p>
+              <p> The page will update as soon as you begin your search for a good read <span role="img" aria-label="books">&#128215;</span></p>
+            </div>
+              }
           </div> 
           <footer className='App-footer'>
-              Made with <span role="img" aria-label="love">&#129505;</span>   by King Code
+              Made with <span role="img" aria-label="love">&#129505;</span> by King Code
           </footer>    
         </div>
       );
