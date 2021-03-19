@@ -1,4 +1,5 @@
 import React from 'react';
+import Rating from 'react-verdict';
 import Collapsible from 'react-collapsible';
 import './Book.css'
 
@@ -13,7 +14,7 @@ export default function Book(props){
             <a href={infoLink} target="_new">
                {imageLinks ? <img src={imageLinks.smallThumbnail ? imageLinks.smallThumbnail : imageLinks.thumbnail} alt='book_preview' className="highlight"/> : ''} 
             </a>
-            {averageRating ? <img className="ratings" src={"ratings/" + averageRating + "_star.png"} alt="rating" width="40%" height="10%"/> : <p>No ratings available</p>}
+            {averageRating ? <div style={{display:'flex', justifyContent: 'center'}}><Rating value={averageRating} /></div> : <p>No ratings available</p>}
             {description ? <Collapsible trigger="View summary"><span>{description}</span></Collapsible> : ''}
             <div className="info">
                {authors ? <div className="left-section">
@@ -26,10 +27,9 @@ export default function Book(props){
                             </ul>
                         </div> : ''} 
                 <div className="right-section">
-                    <p><span className="important">Released in</span> {publishedDate} </p>
+                    {publishedDate ? <p><span className="important">Released in</span> {publishedDate} </p> : ''}
                     {publisher ? <p><span className="important">Published by </span>{publisher}</p>: ''}
                 </div>
-            </div>
-            
+            </div>   
         </div>);
 }
