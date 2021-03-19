@@ -1,11 +1,12 @@
 .Book {
     width: 40%;
-    height: auto;
+    height: 400px;
     margin-left: 5px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     cursor:pointer;
+    border-bottom: 1px ridge gray;
 }
 
 .Collapsible, p, .important {
