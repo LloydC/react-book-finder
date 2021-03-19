@@ -53,7 +53,7 @@ export default function App() {
             </div>
               }
           </div> 
-          <footer className='App-footer'>
+          <footer className={booklist.length === 0 ? 'App-footer absolute' : 'App-footer'}>
               Made with <span role="img" aria-label="love">&#129505;</span> by King Code
           </footer>    
         </div>

@@ -1,3 +1,7 @@
+html {
+  min-height: 100%;
+}
+
 .App {
     width: 100%;
     min-height: 100%;
@@ -75,7 +79,7 @@ input {
   color: #ffffff;
   background: #108dc7;
  
-  position: absolute; 
+  position: relative; 
   left: 0 ; 
   right: 0; 
   bottom: 0;
@@ -83,4 +87,8 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.absolute {
+  position: absolute; 
 }
