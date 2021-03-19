@@ -22,6 +22,7 @@
 .Books {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   flex-shrink: 0;
   flex-grow: 1;
@@ -32,7 +33,7 @@
 }
 
 h1 {
-  font-family: Lucida Sans Typewriter,Papyrus; 
+  font-family: 'Lobster Two', cursive;
   color: #ffffff;
 }
 input {
@@ -69,5 +70,17 @@ input {
 }
 
 .App-footer {
-  font-family: Lucida Sans Typewriter,Papyrus; 
+  height: 100px;
+  font-family: 'Lobster Two', cursive;
+  color: #ffffff;
+  background: #108dc7;
+ 
+  position: absolute; 
+  left: 0 ; 
+  right: 0; 
+  bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

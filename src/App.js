@@ -46,8 +46,9 @@ export default function App() {
           <div className='Books'>
             {booklist.length > 1 ? 
             booklist.map(book => <Book book={book.volumeInfo} key={book.id}/> ) : 
-            <div>
+            <div style={{width: '400px'}}>
               <p>This application uses Google API to find books whose title match what you've entered in the search bar, you can click on any book that you wish to purchase :)</p>
+              <br/>
               <p> The page will update as soon as you begin your search for a good read <span role="img" aria-label="books">&#128215;</span></p>
             </div>
               }
