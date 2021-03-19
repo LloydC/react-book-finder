@@ -1,4 +1,9 @@
-{
+{"packageRules": [
+  {
+    "matchUpdateTypes": ["minor", "patch", "pin", "digest", "devDependencies"],
+    "automerge": true
+  }
+],
   "extends": [
     "config:base"
   ]
