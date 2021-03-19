@@ -19,7 +19,7 @@
 .important {
     font-weight: bold;
 }
-.important > li {
+.important > span {
     font-weight: normal;
     list-style-type: none;
     margin-top: 5px;

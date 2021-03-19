@@ -4,7 +4,7 @@ import Collapsible from 'react-collapsible';
 import './Book.css'
 
 export default function Book(props){
-    const {title, description, authors, imageLinks, publisher, publishedDate, averageRating, infoLink} = props.book;
+    const {title, description, authors, imageLinks, publishedDate, averageRating, infoLink} = props.book;
 
     return (
         <div className="Book">
@@ -14,22 +14,19 @@ export default function Book(props){
             <a href={infoLink} target="_new">
                {imageLinks ? <img src={imageLinks.smallThumbnail ? imageLinks.smallThumbnail : imageLinks.thumbnail} alt='book_preview' className="highlight"/> : ''} 
             </a>
-            {averageRating ? <div style={{display:'flex', justifyContent: 'center'}}><Rating value={averageRating} /></div> : <p>No ratings available</p>}
             {description ? <Collapsible trigger="View summary"><span>{description}</span></Collapsible> : ''}
+            {averageRating ? <div style={{display:'flex', justifyContent: 'center'}}><Rating value={averageRating} /></div> : <p>No ratings available</p>}
             <div className="info">
-               {authors ? <div className="left-section">
-                            <ul className="important">
-                                Written by 
-                                { authors.length > 1 ? 
-                                authors.map((author, i) => i === authors.length - 1 ? <li key={author}>{author}</li> :
-                                <li key={author}>{author}, </li>) : <li> {authors[0]}</li>
-                                }
-                            </ul>
-                        </div> : ''} 
-                <div className="right-section">
-                    {publishedDate ? <p><span className="important">Released in</span> {publishedDate} </p> : ''}
-                    {publisher ? <p><span className="important">Published by </span>{publisher}</p>: ''}
-                </div>
-            </div>   
+            {publishedDate ? <p style={{width: '100%', textAlign: 'center'}}><span className="important">Released date</span> {publishedDate} </p> : ''}
+            {authors ?  <p style={{width: '100%', textAlign: 'center'}}> 
+                            <span className="important">Written by { authors.length > 1 ? 
+                                authors.map((author, i) => i === authors.length - 1 ? 
+                                <span key={author}>{author}</span> :
+                                <span key={author}>{author}, </span>) : 
+                                <span> {authors[0]}</span>
+                            }</span>
+                        </p> : 
+            ''}
+            </div>         
         </div>);
 }
