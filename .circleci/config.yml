@@ -10,7 +10,7 @@ jobs:
       - checkout
       - node/install-packages
       - snyk/scan:
-          fail-on-issues: true
+          fail-on-issues: false
 workflows:
   node-tests:
     jobs:
