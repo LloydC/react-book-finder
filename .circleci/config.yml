@@ -1,7 +1,18 @@
 version: 2.1
 orbs:
   node: circleci/node@4.2.0
+  snyk: snyk/snyk@0.0.13
+jobs:
+  dependency-vulnerability-scan:
+    docker:
+      - image: cimg/node:15.4
+    steps:
+      - checkout
+      - node/install-packages
+      - snyk/scan:
+          fail-on-issues: true
 workflows:
   node-tests:
     jobs:
       - node/test
+      - dependency-vulnerability-scan
