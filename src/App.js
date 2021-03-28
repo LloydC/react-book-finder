@@ -14,17 +14,8 @@ export default function App() {
     
     const handleSubmit = async (e) => {
       e.preventDefault();
-      // const result = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${title}`);
-      //   if(result !== 'undefined'){
-      //     setTitle('')
-      //     setBooklist(result.data.items)
-      //   }
-      //   else{
-      //     setTitle('')
-      //     setNotfound(true)
-      //   }
-      axios.get(`https://www.googleapis.com/books/v1/volumes?q=${title}`)
-      .then(result =>{
+      try{
+        const result = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${title}`);
         if(result !== 'undefined'){
           setTitle('')
           setBooklist(result.data.items)
@@ -33,8 +24,10 @@ export default function App() {
           setTitle('')
           setNotfound(true)
         }
-      })
-      .catch(err => console.error(err))
+      }
+      catch(err){
+        console.error(err);
+      }
     }
     
       return (
