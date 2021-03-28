@@ -8,12 +8,21 @@ export default function App() {
     const [booklist, setBooklist] = useState([])
     const [notfound, setNotfound] = useState(false)
 
-   const handleChange = (e)=> {
+   const handleChange = (e) => {
       setTitle(e.target.value)
     }
     
-    const handleSubmit = (e)=>{
+    const handleSubmit = async (e) => {
       e.preventDefault();
+      // const result = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${title}`);
+      //   if(result !== 'undefined'){
+      //     setTitle('')
+      //     setBooklist(result.data.items)
+      //   }
+      //   else{
+      //     setTitle('')
+      //     setNotfound(true)
+      //   }
       axios.get(`https://www.googleapis.com/books/v1/volumes?q=${title}`)
       .then(result =>{
         if(result !== 'undefined'){
@@ -42,16 +51,17 @@ export default function App() {
               <button className="myButton" type="submit">Search</button>
             </form>
           </header>   
-        {notfound ? <p>No book was found matching the search term</p> : ''}
-          <div className='Books'>
+          
+          {notfound ? <p>No book was found matching the search term</p> : ''}
+
+        <div className='Books'>
             {booklist.length > 1 ? 
-            booklist.map(book => <Book book={book.volumeInfo} key={book.id}/> ) : 
-            <div style={{width: '400px'}}>
-              <p>This application uses Google API to find books whose title match what you've entered in the search bar, you can click on any book that you wish to purchase :)</p>
-              <br/>
-              <p> The page will update as soon as you begin your search for a good read <span role="img" aria-label="books">&#128215;</span></p>
-            </div>
-              }
+              booklist.map(book => <Book book={book.volumeInfo} key={book.id}/> ) : 
+              <div style={{width: '400px'}}>
+                <p>This application uses Google API to find books whose title match what you've entered in the search bar, you can click on any book that you wish to purchase :)</p>
+                <br/>
+                <p> The page will update as soon as you begin your search for a good read <span role="img" aria-label="books">&#128215;</span></p>
+              </div>}
           </div> 
           <footer className={booklist.length === 0 ? 'App-footer absolute' : 'App-footer'}>
               Made with <span role="img" aria-label="love">&#129505;</span> by King Code

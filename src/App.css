@@ -1,5 +1,13 @@
-html {
+html, body {
   min-height: 100%;
+}
+
+h1 {
+  font-family: 'Lobster Two', cursive;
+  color: #ffffff;
+}
+input {
+  width: 300px;
 }
 
 .App {
@@ -13,6 +21,7 @@ html {
 }
 
 .App-header {
+  height: auto;
   background: #108dc7;  /*allback for old browsers*/
   background: -webkit-linear-gradient(to right, #ef8e38, #108dc7);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #ef8e38, #108dc7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -27,22 +36,12 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+
   flex-wrap: wrap;
   flex-shrink: 0;
   flex-grow: 1;
 }
 
-.App-footer {
-  flex-shrink: 0;
-}
-
-h1 {
-  font-family: 'Lobster Two', cursive;
-  color: #ffffff;
-}
-input {
-  width: 300px;
-}
 
 .myButton {
 	box-shadow:inset 0px 1px 3px 0px #91b8b3;

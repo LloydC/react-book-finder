@@ -24,7 +24,8 @@ export default function Book(props){
                                 <span key={author}>{author}</span> :
                                 <span key={author}>{author}, </span>) : 
                                 <span> {authors[0]}</span>
-                            }</span>
+                                }   
+                            </span>
                         </p> : 
             ''}
             </div>         
