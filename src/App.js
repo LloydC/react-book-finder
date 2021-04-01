@@ -1,28 +1,28 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import './App.css';
-import Book from './components/Book/Book'
+import Book from './components/Book/Book';
 
 export default function App() {
-    const [title, setTitle] = useState('')
-    const [booklist, setBooklist] = useState([])
-    const [notfound, setNotfound] = useState(false)
+    const [title, setTitle] = useState('');
+    const [booklist, setBooklist] = useState([]);
+    const [notfound, setNotfound] = useState(false);
 
-   const handleChange = (e) => {
-      setTitle(e.target.value)
-    }
+   const handleChange = (e) => setTitle(e.target.value);
     
     const handleSubmit = async (e) => {
       e.preventDefault();
+
       try{
         const result = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${title}`);
+        
         if(result !== 'undefined'){
-          setTitle('')
-          setBooklist(result.data.items)
+          setTitle('');
+          setBooklist(result.data.items);
         }
         else{
-          setTitle('')
-          setNotfound(true)
+          setTitle('');
+          setNotfound(true);
         }
       }
       catch(err){
@@ -47,7 +47,7 @@ export default function App() {
           
           {notfound ? <p>No book was found matching the search term</p> : ''}
 
-        <div className='Books'>
+        <div className={booklist.length === 0 ? 'Books description' : 'Books'}>
             {booklist.length > 1 ? 
               booklist.map(book => <Book book={book.volumeInfo} key={book.id}/> ) : 
               <div style={{width: '400px'}}>
