@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import coverImage from './book-pick.png'
 import './App.css';
 import Book from './components/Book/Book';
 
@@ -52,6 +53,8 @@ export default function App() {
               booklist.map(book => <Book book={book.volumeInfo} key={book.id}/> ) : 
               <div style={{width: '400px'}}>
                 <p>This application uses Google API to find books whose title match what you've entered in the search bar, you can click on any book that you wish to purchase :)</p>
+                <br/>
+                <img src={coverImage} alt="Guzel_Maksutova" width="300px" height="300px"/>
                 <br/>
                 <p> The page will update as soon as you begin your search for a good read <span role="img" aria-label="books">&#128215;</span></p>
               </div>}
