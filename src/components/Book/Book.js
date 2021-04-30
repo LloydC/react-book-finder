@@ -13,7 +13,7 @@ export default function Book(props){
                 {title} 
                 <span role="img" aria-label="books">&#128215;</span>
             </h2>
-            <a href={infoLink} target="_new">
+            <a href={infoLink} target="_blank" rel="noreferrer">
                {imageLinks ? <img src={imageLinks.smallThumbnail ? imageLinks.smallThumbnail : imageLinks.thumbnail} alt='book_preview' className="highlight"/> : ''} 
             </a>
             {description && !readMore ? <span onClick={()=> setReadMore(true)}>View summary</span> : ''}
