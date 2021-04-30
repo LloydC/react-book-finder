@@ -54,7 +54,7 @@ export default function App() {
               <div style={{width: '400px'}}>
                 <p>This application uses Google API to find books whose title match what you've entered in the search bar, you can click on any book that you wish to purchase :)</p>
                 <br/>
-                <img src={coverImage} alt="Guzel_Maksutova" width="300px" height="300px"/>
+                <img src={coverImage} alt="Guzel_Maksutova" width="300px" height="200px"/>
                 <br/>
                 <p> The page will update as soon as you begin your search for a good read <span role="img" aria-label="books">&#128215;</span></p>
               </div>}
