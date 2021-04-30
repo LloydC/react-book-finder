@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import coverImage from './book-pick.png'
+import coverImage from './assets/book-pick.png'
 import './App.css';
 import Book from './components/Book/Book';
 
