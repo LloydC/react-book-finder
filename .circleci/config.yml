@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
   node: circleci/node@4.5.1
-  snyk: snyk/snyk@0.1.0
+  snyk: snyk/snyk@0.2.0
 jobs:
   dependency-vulnerability-scan:
     docker:
