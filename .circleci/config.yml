@@ -3,11 +3,15 @@ orbs:
   node: circleci/node@5.0.0
   snyk: snyk/snyk@1.1.2
 jobs:
-  dependency-vulnerability-scan:
+  npm-install:
     docker:
       - image: cimg/node:17.5
     steps:
       - run: npm i
+  dependency-vulnerability-scan:
+    docker:
+      - image: cimg/node:17.5
+    steps:
       - checkout
       - node/install-packages
       - snyk/scan:
@@ -18,4 +22,5 @@ jobs:
 workflows:
   node-tests:
     jobs:
+      - npm-install
       - node/test
