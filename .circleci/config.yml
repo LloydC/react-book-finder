@@ -3,6 +3,7 @@ orbs:
   node: circleci/node@5.0.0
   snyk: snyk/snyk@1.1.2
 jobs:
+  working_directory: ~/react-book-finder
   dependency-vulnerability-scan:
     docker:
       - image: cimg/node:17.5
