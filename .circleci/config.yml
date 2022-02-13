@@ -9,6 +9,7 @@ jobs:
     steps:
       - checkout
       - node/install-packages
+      - run: npm i
       - snyk/scan:
           fail-on-issues: false
           monitor-on-build: true
