@@ -7,9 +7,9 @@ jobs:
     docker:
       - image: cimg/node:17.5
     steps:
+      - run: npm i
       - checkout
       - node/install-packages
-      - run: npm i
       - snyk/scan:
           fail-on-issues: false
           monitor-on-build: true
