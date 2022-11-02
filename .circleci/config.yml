@@ -1,16 +1,16 @@
 version: 2.1
 orbs:
-  node: circleci/node@5.0.2
-  snyk: snyk/snyk@1.2.3
+  node: circleci/node@5.0.3
+  snyk: snyk/snyk@1.4.0
 jobs:
   npm-install:
     docker:
-      - image: cimg/node:18.7
+      - image: cimg/node:19.0
     steps:
       - run: cd ../../ && npm i
   dependency-vulnerability-scan:
     docker:
-      - image: cimg/node:18.7
+      - image: cimg/node:19.0
     steps:
       - checkout
       - node/install-packages
