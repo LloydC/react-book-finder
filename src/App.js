@@ -6,7 +6,7 @@ import Book from './components/Book/Book';
 
 export default function App() {
     const [title, setTitle] = useState('');
-    const [booklist, setBooklist] = useState([]);
+    const [bookList, setBookList] = useState([]);
     const [notfound, setNotfound] = useState(false);
 
    const handleChange = (e) => setTitle(e.target.value);
@@ -19,7 +19,7 @@ export default function App() {
         
         if(result !== 'undefined'){
           setTitle('');
-          setBooklist(result.data.items);
+          setBookList(result.data.items);
         }
         else{
           setTitle('');
@@ -48,9 +48,9 @@ export default function App() {
           
           {notfound ? <p>No book was found matching the search term</p> : ''}
 
-        <div className={booklist.length === 0 ? 'Books description' : 'Books'}>
-            {booklist.length > 1 ? 
-              booklist.map(book => <Book book={book.volumeInfo} key={book.id}/> ) : 
+        <div className={bookList.length === 0 ? 'Books description' : 'Books'}>
+            {bookList.length > 1 ? 
+              bookList.map(book => <Book book={book.volumeInfo} key={book.id}/> ) : 
               <div style={{width: '400px'}}>
                 <p>This application uses Google API to find books whose title match what you've entered in the search bar, you can click on any book that you wish to purchase :)</p>
                 <br/>
@@ -59,8 +59,8 @@ export default function App() {
                 <p> The page will update as soon as you begin your search for a good read <span role="img" aria-label="books">&#128215;</span></p>
               </div>}
           </div> 
-          <footer className={booklist.length === 0 ? 'App-footer absolute' : 'App-footer'}>
-              Made with <span role="img" aria-label="love">&#129505;</span> by King Code
+          <footer className={bookList.length === 0 ? 'App-footer absolute' : 'App-footer'}>
+              Made with <span role="img" aria-label="love">&#129505;</span> by Lloyd Chambrier
           </footer>    
         </div>
       );
