@@ -1,10 +1,10 @@
-# Book Finder Application
+# Book Finder
 
 ## General information
 
 Book Finder is a Single Page application that retrieves books based on User search. It uses Google API to search and render the books that match the query.
 
- ![Project preview](./src//assets/book-pick.png) 
+ ![Project preview](./src//assets/project-preview.png) 
 
  ## Usage
 
