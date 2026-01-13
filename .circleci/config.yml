@@ -5,12 +5,12 @@ orbs:
 jobs:
   npm-install:
     docker:
-      - image: cimg/node:18.20.5
+      - image: cimg/node:24.13.0
     steps:
       - run: cd ../../ && npm i
   dependency-vulnerability-scan:
     docker:
-      - image: cimg/node:18.20.5
+      - image: cimg/node:24.13.0
     steps:
       - checkout
       - node/install-packages
