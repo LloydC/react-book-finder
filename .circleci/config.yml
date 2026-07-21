@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
   node: circleci/node@5.3.0
-  snyk: snyk/snyk@1.7.2
+  snyk: snyk/snyk@2.3.0
 jobs:
   npm-install:
     docker:
